@@ -15,9 +15,10 @@ describe('FizzBuzz', () => {
         let lancer = Yahtzee.lancer()
         lancer.should.have.lengthOf(5)
     });
-    it('Test Ones', () => {   
-        let isOnes = Yahtzee.isOnes()
-        assert.isTrue(isOnes)
+    it('Test Ones', () => { 
+        let tab:Array<number> = [1,2,4,1,3]  
+        let isOnes = Yahtzee.isOnes(tab)
+        assert.equal(2,isOnes);
     });
     
 });
