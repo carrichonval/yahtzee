@@ -20,6 +20,11 @@ describe('FizzBuzz', () => {
         let isOnes = Yahtzee.isOnes(tab)
         assert.equal(2,isOnes);
     });
+    it('Test Twos', () => { 
+        let tab:Array<number> = [1,2,2,1,2]  
+        let isTwos = Yahtzee.isTwos(tab)
+        assert.equal(6,isTwos);
+    });
     
 });
 
