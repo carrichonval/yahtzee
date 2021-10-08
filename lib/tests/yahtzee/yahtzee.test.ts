@@ -50,6 +50,11 @@ describe('FizzBuzz', () => {
         let value = Yahtzee.threeOfKind(tab)
         assert.equal(22,value);
     });
+    it('Test Four of a kind', () => { 
+        let tab:Array<number> = [4,4,4,4,1]  
+        let value = Yahtzee.fourOfKind(tab)
+        assert.equal(17,value);
+    });
 
     
 });
