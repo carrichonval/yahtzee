@@ -52,6 +52,41 @@ export class Yahtzee{
         }
         return result;
     }
+
+    static threeOfKind(tab : Array<number>) : number
+    {
+        let total = 0
+        let occurences = this.countOccurences(tab)
+        let isThree = false
+        for(let i=0;i<tab.length;i++){
+            total+= tab[i] 
+        }
+
+        for (const [key, value] of Object.entries(occurences)) {
+            if(value >= 3){
+                isThree = true
+            }
+        }
+
+        if(isThree){
+            return total
+        }else{
+            return 0
+        }
+    }
+
+    static countOccurences(tab){
+        var result = {};
+        tab.forEach(function(elem){
+            if(elem in result){
+                result[elem] = ++result[elem];
+            }
+            else{
+                result[elem] = 1;
+            }
+        });
+        return result;
+    }
     
 
 }
