@@ -55,14 +55,15 @@ export class Yahtzee{
 
     static threeOfKind(tab : Array<number>) : number
     {
-        let total = 0
-        let occurences = this.countOccurences(tab)
-        let isThree = false
-        for(let i=0;i<tab.length;i++){
+        let total : number = 0
+        let occurences : object = this.countOccurences(tab)
+        let isThree : boolean = false
+
+        for(let  i : number = 0;i<tab.length;i++){
             total+= tab[i] 
         }
 
-        for (const [key, value] of Object.entries(occurences)) {
+        for (const [propriete, value] of Object.entries(occurences)) {
             if(value >= 3){
                 isThree = true
             }
