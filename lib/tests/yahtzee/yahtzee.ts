@@ -113,7 +113,6 @@ export class Yahtzee{
                 isTwo = true
             }
         }
-
         if(isThree && isTwo){
             return 25;
         }else{
@@ -141,8 +140,7 @@ export class Yahtzee{
             return 40
         }else{
             return 0
-        }       
-       
+        } 
     }
 
     static chance(tab : Array<number>) : number
@@ -164,7 +162,6 @@ export class Yahtzee{
                 isFive = true
             }
         }
-
         if(isFive){
             return 50;
         }else{
@@ -184,7 +181,5 @@ export class Yahtzee{
         });
         return result;
     }
-    
-
 
 }
