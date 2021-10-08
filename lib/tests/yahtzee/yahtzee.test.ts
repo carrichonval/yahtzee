@@ -55,7 +55,23 @@ describe('FizzBuzz', () => {
         let value = Yahtzee.fourOfKind(tab)
         assert.equal(17,value);
     });
+    it('Test Full house', () => { 
+        let tab:Array<number> = [3,4,4,3,3]  
+        let value = Yahtzee.fullHouse(tab)
+        assert.equal(25,value);
+    });
+    it('Test Small straight', () => { 
+        let tab:Array<number> = [1,2,3,4,4]  
+        let value = Yahtzee.smallStraight(tab)
+        assert.equal(30,value);
+    });
+    it('Test Large straight', () => { 
+        let tab:Array<number> = [2,4,3,5,6]  
+        let value = Yahtzee.largeStraight(tab)
+        assert.equal(40,value);
+    });
 
+    
     
 });
 
