@@ -11,8 +11,18 @@ export class Yahtzee{
         for (let i = 1; i <=5 ; i++) {
             tab.push(this.lanceUnDe())
         }
-        console.log(tab)
         return tab
+    }
+
+    static isOnes(tab :Array<number>) : number
+    {
+        let result: number =0;
+        for(let i=0;i<tab.length;i++){
+            if(tab[i]==1){
+                result++;
+            }
+        }
+        return result;
     }
 
 }
