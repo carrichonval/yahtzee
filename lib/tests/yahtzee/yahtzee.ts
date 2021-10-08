@@ -16,66 +16,42 @@ export class Yahtzee{
 
     static isOnes(tab :Array<number>) : number
     {
-        let result: number =0;
-        for(let i=0;i<tab.length;i++){
-            if(tab[i]==1){
-                result++;
-            }
-        }
-        return result;
+        return this.calculateNumber(tab,1);
     }
 
     static isTwos(tab :Array<number>) : number
     {
-        let result: number =0;
-        for(let i=0;i<tab.length;i++){
-            if(tab[i]==2){
-                result = result + 2
-            }
-        }
-        return result;
+        return this.calculateNumber(tab,2);
     }
 
     static isThrees(tab :Array<number>) : number
     {
-        let result: number =0;
-        for(let i=0;i<tab.length;i++){
-            if(tab[i]==3){
-                result = result + 3
-            }
-        }
-        return result;
+        return this.calculateNumber(tab,3);
     }
 
     static isFours(tab :Array<number>) : number
     {
-        let result: number = 0;
-        for(let i=0;i<tab.length;i++){
-            if(tab[i]==4){
-                result = result + 4
-            }
-        }
-        return result;
+        return this.calculateNumber(tab,4);
     }
     static isFives(tab :Array<number>) : number
     {
-        let result: number = 0;
-        for(let i=0;i<tab.length;i++){
-            if(tab[i]==5){
-                result = result + 5
-            }
-        }
-        return result;
+        return this.calculateNumber(tab,5);
     }
     static isSixes(tab :Array<number>) : number
     {
+        return this.calculateNumber(tab,6);
+    }
+
+     static calculateNumber(tab :Array<number>,dice:number) : number
+    {
         let result: number = 0;
         for(let i=0;i<tab.length;i++){
-            if(tab[i]==6){
-                result = result + 6
+            if(tab[i]==dice){
+                result = result + dice
             }
         }
         return result;
     }
+    
 
 }
