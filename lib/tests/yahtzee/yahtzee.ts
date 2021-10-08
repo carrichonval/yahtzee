@@ -7,8 +7,8 @@ export class Yahtzee{
 
     static lancer() : Array<number>
     {
-        let tab = []
-        for (let i = 1; i <=5 ; i++) {
+        let tab : Array<number> = []
+        for (let i : number = 1; i <=5 ; i++) {
             tab.push(this.lanceUnDe())
         }
         return tab
@@ -44,8 +44,8 @@ export class Yahtzee{
 
     static calculateNumber(tab :Array<number>,dice:number) : number
     {
-        let result: number = 0;
-        for(let i=0;i<tab.length;i++){
+        let result : number = 0;
+        for(let i : number = 0; i<tab.length; i++){
             if(tab[i]==dice){
                 result = result + dice
             }
@@ -123,7 +123,7 @@ export class Yahtzee{
     static smallStraight(tab : Array<number>) : number
     {
         let occurences : object = this.countOccurences(tab)
-        let size = Object.keys(occurences).length
+        let size : number = Object.keys(occurences).length
         if(size >= 4 && occurences.hasOwnProperty(3)){
             return 30
         }else{
@@ -135,7 +135,7 @@ export class Yahtzee{
     static largeStraight(tab : Array<number>) : number
     {
         let occurences : object = this.countOccurences(tab)
-        let size = Object.keys(occurences).length
+        let size : number = Object.keys(occurences).length
         if(size >= 5 && occurences.hasOwnProperty(2) &&  occurences.hasOwnProperty(3) &&  occurences.hasOwnProperty(4) &&  occurences.hasOwnProperty(5)){
             return 40
         }else{
@@ -146,7 +146,7 @@ export class Yahtzee{
     static chance(tab : Array<number>) : number
     {
         let result : number = 0;
-        for(let i=0; i<tab.length; i++){
+        for(let i : number = 0; i<tab.length; i++){
             result += tab[i]
         }
         return result;
@@ -169,8 +169,9 @@ export class Yahtzee{
         }
     }
 
-    static countOccurences(tab){
-        var result = {}
+    static countOccurences(tab : Array<number>) : object
+    {
+        var result : object = {}
         tab.forEach(function(elem){
             if(elem in result){
                 result[elem] = ++result[elem]
@@ -183,3 +184,4 @@ export class Yahtzee{
     }
 
 }
+
