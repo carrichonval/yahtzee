@@ -36,4 +36,15 @@ export class Yahtzee{
         return result;
     }
 
+    static isThrees(tab :Array<number>) : number
+    {
+        let result: number =0;
+        for(let i=0;i<tab.length;i++){
+            if(tab[i]==3){
+                result = result + 3
+            }
+        }
+        return result;
+    }
+
 }
