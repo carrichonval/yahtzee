@@ -82,8 +82,8 @@ export class Yahtzee{
         let occurences : object = this.countOccurences(tab)
         let isFour : boolean = false
 
-        for(let  i : number = 0;i<tab.length;i++){
-            total+= tab[i] 
+        for(let  i : number = 0; i<tab.length; i++){
+            total += tab[i] 
         }
 
         for (const [propriete, value] of Object.entries(occurences)) {
@@ -145,11 +145,38 @@ export class Yahtzee{
        
     }
 
+    static chance(tab : Array<number>) : number
+    {
+        let result : number = 0;
+        for(let i=0; i<tab.length; i++){
+            result += tab[i]
+        }
+        return result;
+    }
+
+    static yahtzee(tab : Array<number>) : number
+    {
+        let occurences : object = this.countOccurences(tab)
+        let isFive : boolean = false
+
+        for (const [propriete, value] of Object.entries(occurences)) {
+            if(value == 5){
+                isFive = true
+            }
+        }
+
+        if(isFive){
+            return 50;
+        }else{
+            return 0;
+        }
+    }
+
     static countOccurences(tab){
-        var result = {};
+        var result = {}
         tab.forEach(function(elem){
             if(elem in result){
-                result[elem] = ++result[elem];
+                result[elem] = ++result[elem]
             }
             else{
                 result[elem] = 1;
