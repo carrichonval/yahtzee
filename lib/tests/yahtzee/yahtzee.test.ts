@@ -70,6 +70,16 @@ describe('FizzBuzz', () => {
         let value = Yahtzee.largeStraight(tab)
         assert.equal(40,value);
     });
+    it('Test Chance', () => { 
+        let tab:Array<number> = [6,4,5,5,5]  
+        let value = Yahtzee.chance(tab)
+        assert.equal(25,value);
+    });
+    it('Test Yahtzee', () => { 
+        let tab:Array<number> = [5,5,5,5,5]  
+        let value = Yahtzee.yahtzee(tab)
+        assert.equal(50,value);
+    });
 
     
     
