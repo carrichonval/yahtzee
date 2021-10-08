@@ -42,7 +42,7 @@ export class Yahtzee{
         return this.calculateNumber(tab,6);
     }
 
-     static calculateNumber(tab :Array<number>,dice:number) : number
+    static calculateNumber(tab :Array<number>,dice:number) : number
     {
         let result: number = 0;
         for(let i=0;i<tab.length;i++){
@@ -99,6 +99,52 @@ export class Yahtzee{
         }
     }
 
+    static fullHouse(tab : Array<number>) : number
+    {
+        let occurences : object = this.countOccurences(tab)
+        let isThree : boolean = false
+        let isTwo : boolean = false
+
+        for (const [propriete, value] of Object.entries(occurences)) {
+            if(value == 3){
+                isThree = true
+            }
+            if(value == 2){
+                isTwo = true
+            }
+        }
+
+        if(isThree && isTwo){
+            return 25;
+        }else{
+            return 0;
+        }
+    }
+
+    static smallStraight(tab : Array<number>) : number
+    {
+        let occurences : object = this.countOccurences(tab)
+        let size = Object.keys(occurences).length
+        if(size >= 4 && occurences.hasOwnProperty(3)){
+            return 30
+        }else{
+            return 0
+        }
+
+    }
+
+    static largeStraight(tab : Array<number>) : number
+    {
+        let occurences : object = this.countOccurences(tab)
+        let size = Object.keys(occurences).length
+        if(size >= 5 && occurences.hasOwnProperty(2) &&  occurences.hasOwnProperty(3) &&  occurences.hasOwnProperty(4) &&  occurences.hasOwnProperty(5)){
+            return 40
+        }else{
+            return 0
+        }       
+       
+    }
+
     static countOccurences(tab){
         var result = {};
         tab.forEach(function(elem){
@@ -112,5 +158,6 @@ export class Yahtzee{
         return result;
     }
     
+
 
 }
