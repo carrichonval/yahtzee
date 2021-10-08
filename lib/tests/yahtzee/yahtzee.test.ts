@@ -1,5 +1,6 @@
 import { assert, expect } from 'chai';
 const chai = require('chai');
+var should = require('chai').should()
 import { ChaiPlugin as ChaiPluginAssertType } from 'chai-asserttype-extra';
 chai.use(ChaiPluginAssertType);
 import {Yahtzee} from './yahtzee'
@@ -10,6 +11,11 @@ describe('FizzBuzz', () => {
         let number = Yahtzee.lanceUnDe()
         expect(number).to.be.within(1,6);
     });
+    it('Renvoie un tableau de 5', () => {   
+        let lancer = Yahtzee.lancer()
+        lancer.should.have.lengthOf(5)
+    });
+    
 });
 
 
