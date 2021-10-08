@@ -80,9 +80,6 @@ describe('FizzBuzz', () => {
         let value = Yahtzee.yahtzee(tab)
         assert.equal(50,value);
     });
-
-    
-    
 });
 
 

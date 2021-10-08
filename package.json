@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "yahtzee-test": "mocha -r ts-node/register lib/tests/yahtzee/*"
+    "test": "mocha -r ts-node/register lib/tests/yahtzee/*"
   },
   "repository": {
     "type": "git",

@@ -129,7 +129,6 @@ export class Yahtzee{
         }else{
             return 0
         }
-
     }
 
     static largeStraight(tab : Array<number>) : number
