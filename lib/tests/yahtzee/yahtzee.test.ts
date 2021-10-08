@@ -45,6 +45,12 @@ describe('FizzBuzz', () => {
         let value = Yahtzee.isSixes(tab)
         assert.equal(6,value);
     });
+    it('Test Three of a kind', () => { 
+        let tab:Array<number> = [5,1,5,5,6]  
+        let value = Yahtzee.threeOfKind(tab)
+        assert.equal(22,value);
+    });
+
     
 });
 
