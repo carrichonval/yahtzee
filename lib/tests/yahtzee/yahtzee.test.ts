@@ -17,13 +17,18 @@ describe('FizzBuzz', () => {
     });
     it('Test Ones', () => { 
         let tab:Array<number> = [1,2,4,1,3]  
-        let isOnes = Yahtzee.isOnes(tab)
-        assert.equal(2,isOnes);
+        let value = Yahtzee.isOnes(tab)
+        assert.equal(2,value);
     });
     it('Test Twos', () => { 
         let tab:Array<number> = [1,2,2,1,2]  
-        let isTwos = Yahtzee.isTwos(tab)
-        assert.equal(6,isTwos);
+        let value = Yahtzee.isTwos(tab)
+        assert.equal(6,value);
+    });
+    it('Test Threes', () => { 
+        let tab:Array<number> = [3,5,3,3,3]  
+        let value = Yahtzee.isThrees(tab)
+        assert.equal(12,value);
     });
     
 });
