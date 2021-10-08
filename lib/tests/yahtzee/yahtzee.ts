@@ -76,6 +76,29 @@ export class Yahtzee{
         }
     }
 
+    static fourOfKind(tab : Array<number>) : number
+    {
+        let total : number = 0
+        let occurences : object = this.countOccurences(tab)
+        let isFour : boolean = false
+
+        for(let  i : number = 0;i<tab.length;i++){
+            total+= tab[i] 
+        }
+
+        for (const [propriete, value] of Object.entries(occurences)) {
+            if(value >= 4){
+                isFour = true
+            }
+        }
+
+        if(isFour){
+            return total
+        }else{
+            return 0
+        }
+    }
+
     static countOccurences(tab){
         var result = {};
         tab.forEach(function(elem){
