@@ -30,6 +30,11 @@ describe('FizzBuzz', () => {
         let value = Yahtzee.isThrees(tab)
         assert.equal(12,value);
     });
+    it('Test Fours', () => { 
+        let tab:Array<number> = [4,4,3,3,3]  
+        let value = Yahtzee.isFours(tab)
+        assert.equal(8,value);
+    });
     
 });
 
