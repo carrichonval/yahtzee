@@ -25,4 +25,15 @@ export class Yahtzee{
         return result;
     }
 
+    static isTwos(tab :Array<number>) : number
+    {
+        let result: number =0;
+        for(let i=0;i<tab.length;i++){
+            if(tab[i]==2){
+                result = result + 2
+            }
+        }
+        return result;
+    }
+
 }
