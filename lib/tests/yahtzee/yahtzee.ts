@@ -57,5 +57,15 @@ export class Yahtzee{
         }
         return result;
     }
+    static isFives(tab :Array<number>) : number
+    {
+        let result: number = 0;
+        for(let i=0;i<tab.length;i++){
+            if(tab[i]==5){
+                result = result + 5
+            }
+        }
+        return result;
+    }
 
 }
