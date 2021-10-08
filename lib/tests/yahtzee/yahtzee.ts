@@ -47,4 +47,15 @@ export class Yahtzee{
         return result;
     }
 
+    static isFours(tab :Array<number>) : number
+    {
+        let result: number = 0;
+        for(let i=0;i<tab.length;i++){
+            if(tab[i]==4){
+                result = result + 4
+            }
+        }
+        return result;
+    }
+
 }
