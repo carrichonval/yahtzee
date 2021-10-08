@@ -35,6 +35,11 @@ describe('FizzBuzz', () => {
         let value = Yahtzee.isFours(tab)
         assert.equal(8,value);
     });
+    it('Test Fives', () => { 
+        let tab:Array<number> = [5,1,5,5,6]  
+        let value = Yahtzee.isFives(tab)
+        assert.equal(15,value);
+    });
     
 });
 
